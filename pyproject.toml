@@ -4,6 +4,13 @@ version = "0.1.0"
 description = ""
 authors = ["Sergey Sakirko <ssakirko@mail.ru>"]
 
+packages = [
+    { include = "gendiff" }
+]
+
+[tool.poetry.scripts]
+gendiff = "gendiff.scripts.gendiff:main"
+
 [tool.poetry.dependencies]
 python = "^3.7"
 
