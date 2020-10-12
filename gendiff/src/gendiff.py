@@ -33,6 +33,8 @@ def generate_diff(file_path1, file_path2):
         for key in json2_keys - json1_keys
     ])
 
+    diff.sort()
+
     for key in json1_keys & json2_keys:
         if json1[key] != json2[key]:
             diff.append(jsonify_value(key, json1[key], '-'))
