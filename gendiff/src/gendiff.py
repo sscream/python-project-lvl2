@@ -1,7 +1,7 @@
-import json
+from .io import get_file_data
 
 
-def jsonify_value(key, value, action=' '):
+def jsonify_value(key: str, value: str, action: str = ' '):
     template = ' {} {}: {}'
 
     if isinstance(value, bool):
@@ -10,9 +10,9 @@ def jsonify_value(key, value, action=' '):
     return template.format(action, key, value)
 
 
-def generate_diff(file_path1, file_path2):
-    json1 = json.load(open(file_path1))
-    json2 = json.load(open(file_path2))
+def generate_diff(file_path1: str, file_path2: str) -> str:
+    json1 = get_file_data(file_path1)
+    json2 = get_file_data(file_path2)
 
     json1_keys = set(json1.keys())
     json2_keys = set(json2.keys())
