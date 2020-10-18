@@ -29,6 +29,11 @@ test_cases = [
         get_fixture_path('flat_file2.yml'),
         get_fixture_path('flat_expected'),
     ),
+    (
+        get_fixture_path('nested_file1.json'),
+        get_fixture_path('nested_file2.json'),
+        get_fixture_path('nested_expected'),
+    ),
 ]
 
 
