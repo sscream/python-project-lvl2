@@ -55,5 +55,5 @@ def indent(depth: int) -> str:
     return '  ' * depth
 
 
-def format(diff: dict) -> str:
-    return f'{{\n{render(diff)}\n}}'
+def format(diff_data: dict) -> str:
+    return f'{{\n{render(diff_data)}\n}}'
