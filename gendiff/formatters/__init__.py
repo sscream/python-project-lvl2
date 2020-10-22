@@ -3,7 +3,7 @@ from typing import Callable
 
 FORMATTER_FUNCTION = 'format'
 
-(STYLISH, PLAIN) = AVAILABLE_FORMATTERS = ('stylish', 'plain')
+(STYLISH, PLAIN, JSON) = AVAILABLE_FORMATTERS = ('stylish', 'plain', 'json')
 
 
 def get_formatter(format_name: str) -> Callable[[dict], str]:

@@ -38,6 +38,12 @@ test_cases = [
         get_fixture_path('file2.json'),
         get_fixture_path('expected_plain'),
         formatters.PLAIN,
+    ),
+    (
+        get_fixture_path('file1.json'),
+        get_fixture_path('file2.json'),
+        get_fixture_path('expected.json'),
+        formatters.JSON,
     )
 ]
 

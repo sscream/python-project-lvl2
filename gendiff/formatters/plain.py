@@ -3,8 +3,8 @@ from typing import Any, List
 from gendiff import tree
 
 
-def format(diff: dict) -> str:
-    return '\n'.join(render(diff))
+def format(diff_data: dict) -> str:
+    return '\n'.join(get_plain_diff(diff_data))
 
 
 def to_str(value: Any) -> str:
@@ -20,7 +20,7 @@ def to_str(value: Any) -> str:
     return f"'{str(value)}'"
 
 
-def render(diff_data: dict, path: str = '') -> List[str]:
+def get_plain_diff(diff_data: dict, path: str = '') -> List[str]:
     result = []
 
     for key, (status, value) in sorted(diff_data.items()):
@@ -43,7 +43,7 @@ def render(diff_data: dict, path: str = '') -> List[str]:
 
         if status == tree.NESTED:
             result.extend(
-                render(value, f'{value_path}.')
+                get_plain_diff(value, f'{value_path}.')
             )
 
     return result
