@@ -62,7 +62,7 @@
          "baz": {
             "status": "modified",
             "old_value": "bas",
-            "new_value": "bars"
+            "new_value": null
          },
          "foo": {
             "status": "unmodified",
