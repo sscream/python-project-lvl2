@@ -10,7 +10,10 @@ def format(diff_data: dict) -> str:
 def prepare_data(diff_data: dict) -> dict:
     result = {}
 
-    for key, (status, value) in sorted(diff_data.items()):
+    for key, meta in sorted(diff_data.items()):
+        status = meta['status']
+        value = meta['value']
+
         if status == tree.NESTED:
             result[key] = {
                 'status': status,
@@ -19,8 +22,8 @@ def prepare_data(diff_data: dict) -> dict:
         elif status == tree.MODIFIED:
             result[key] = {
                 'status': status,
-                'old_value': value[0],
-                'new_value': value[1]
+                'old_value': value['old'],
+                'new_value': value['new']
             }
         else:
             result[key] = {

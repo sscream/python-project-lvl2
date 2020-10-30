@@ -23,8 +23,11 @@ def to_str(value: Any) -> str:
 def get_plain_diff(diff_data: dict, path: str = '') -> List[str]:
     result = []
 
-    for key, (status, value) in sorted(diff_data.items()):
+    for key, meta in sorted(diff_data.items()):
         value_path = f'{path}{key}'
+
+        status = meta['status']
+        value = meta['value']
 
         if status == tree.ADDED:
             result.append(
@@ -38,7 +41,7 @@ def get_plain_diff(diff_data: dict, path: str = '') -> List[str]:
         if status == tree.MODIFIED:
             result.append(
                 f"Property '{value_path}' was updated. "
-                f"From {to_str(value[0])} to {to_str(value[1])}"
+                f"From {to_str(value['old'])} to {to_str(value['new'])}"
             )
 
         if status == tree.NESTED:

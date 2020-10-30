@@ -11,14 +11,17 @@ def render(diff_data: dict, depth: int = 1) -> str:
             f'{indent(depth)}{symbol} {key}: {to_str(value, depth)}'
         )
 
-    for key, (status, value) in sorted(diff_data.items()):
+    for key, meta in sorted(diff_data.items()):
+        status = meta['status']
+        value = meta['value']
+
         if status == tree.UNMODIFIED:
             store(' ', value)
 
         if status == tree.MODIFIED:
             old, new = value
-            store('-', old)
-            store('+', new)
+            store('-', value['old'])
+            store('+', value['new'])
 
         if status == tree.REMOVED:
             store('-', value)
