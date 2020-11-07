@@ -11,13 +11,18 @@ def to_str(value: Any) -> str:
     if isinstance(value, dict):
         return '[complex value]'
 
-    if isinstance(value, bool):
-        return f'{str(value).lower()}'
-
     if value is None:
         return 'null'
 
-    return f"'{str(value)}'"
+    str_value = str(value)
+
+    if isinstance(value, bool):
+        return f'{str_value.lower()}'
+
+    if str_value.isnumeric():
+        return str_value
+
+    return f"'{str_value}'"
 
 
 def get_plain_diff(diff_data: dict, path: str = '') -> List[str]:

@@ -3,7 +3,7 @@ common:
   setting1: Value 1
   setting3:
     key: value
-  setting4: blah blah
+  setting4: 111
   setting5:
     key5: value5
   setting6:
