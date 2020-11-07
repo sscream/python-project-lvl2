@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "sscream_gendiff"
+name = "sscream-gendiff"
 version = "0.2.0"
 description = ""
 authors = ["Sergey Sakirko <ssakirko@mail.ru>"]
