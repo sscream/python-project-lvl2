@@ -1,6 +1,7 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/478ac062720b5fdc552b/maintainability)](https://codeclimate.com/github/sscream/python-project-lvl2/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/478ac062720b5fdc552b/test_coverage)](https://codeclimate.com/github/sscream/python-project-lvl2/test_coverage)
-[![Actions Status](https://github.com/sscream/python-project-lvl2/workflows/lint-and-test/badge.svg)](https://github.com/sscream/python-project-lvl2/actions)
+[![Lint and test](https://github.com/sscream/python-project-lvl2/workflows/lint-and-test/badge.svg)](https://github.com/sscream/python-project-lvl2/actions?query=workflow%3Alint-and-test)
+[![Hexlet check](https://github.com/sscream/python-project-lvl2/workflows/hexlet-check/badge.svg)](https://github.com/sscream/python-project-lvl2/actions?query=workflow%3Ahexlet-check)
 
 ## About
 
